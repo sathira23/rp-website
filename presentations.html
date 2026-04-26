@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentations | Research Project</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* HERO */
+.slide-hero{
+padding:90px 20px 45px;
+text-align:center;
+animation:fadeUp 1s ease;
+}
+
+.slide-hero h1{
+font-size:62px;
+font-weight:700;
+margin-bottom:14px;
+background:linear-gradient(90deg,#ffffff,#38bdf8,#a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.slide-hero p{
+max-width:950px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+opacity:0.88;
+}
+
+/* GRID */
+.slide-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:32px;
+padding:30px;
+max-width:1500px;
+margin:auto;
+}
+
+/* CARD */
+.slide-card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+padding:38px 32px;
+border-radius:26px;
+backdrop-filter:blur(12px);
+box-shadow:0 18px 35px rgba(0,0,0,0.28);
+transition:0.4s;
+text-align:center;
+animation:fadeUp 0.9s ease;
+min-height:430px;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.slide-card:hover{
+transform:translateY(-10px);
+box-shadow:0 28px 45px rgba(0,0,0,0.35);
+}
+
+.slide-card i{
+font-size:52px;
+color:#38bdf8;
+margin-bottom:22px;
+}
+
+.slide-card h3{
+font-size:36px;
+margin-bottom:14px;
+line-height:1.25;
+}
+
+.slide-card p{
+font-size:18px;
+opacity:0.84;
+margin-bottom:28px;
+line-height:1.8;
+flex-grow:1;
+}
+
+/* BUTTON */
+.btn-row{
+display:flex;
+justify-content:center;
+margin-top:auto;
+}
+
+.btn-view{
+padding:15px 28px;
+border-radius:40px;
+font-size:16px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+background:linear-gradient(135deg,#06b6d4,#7c3aed);
+color:#fff;
+}
+
+.btn-view:hover{
+transform:translateY(-3px) scale(1.03);
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:40px;
+opacity:0.75;
+font-size:15px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.slide-hero h1{
+font-size:42px;
+}
+
+.slide-hero p{
+font-size:16px;
+}
+
+.slide-card{
+min-height:auto;
+padding:28px 24px;
+}
+
+.slide-card h3{
+font-size:28px;
+}
+
+.slide-card p{
+font-size:16px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="domain.html">Domain</a>
+<a href="milestones.html">Milestones</a>
+<a href="documents.html">Documents</a>
+<a href="presentations.html" class="active">Slides</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="slide-hero">
+<h1>Presentations</h1>
+<p>
+Access all presentation slides used throughout the research journey.<br>
+Preview online instantly.
+</p>
+</section>
+
+<!-- GRID -->
+<section class="slide-grid">
+
+<!-- Proposal -->
+<div class="slide-card">
+<i class="fa fa-file-powerpoint"></i>
+<h3>Proposal Presentation</h3>
+<p>Initial project concept, objectives, scope and research methodology.</p>
+
+<div class="btn-row">
+<a href="slides/ProposalPresentation.pdf" target="_blank" class="btn-view">View Slides</a>
+</div>
+</div>
+
+<!-- PP1 -->
+<div class="slide-card">
+<i class="fa fa-chart-line"></i>
+<h3>Progress Presentation 1</h3>
+<p>System progress, completed modules, implementation status and early findings.</p>
+
+<div class="btn-row">
+<a href="slides/pp1.pdf" target="_blank" class="btn-view">View Slides</a>
+</div>
+</div>
+
+<!-- PP2 -->
+<div class="slide-card">
+<i class="fa fa-chart-column"></i>
+<h3>Progress Presentation 2</h3>
+<p>Advanced development progress, integrations and performance updates.</p>
+
+<div class="btn-row">
+<a href="slides/pp2.pdf" target="_blank" class="btn-view">View Slides</a>
+</div>
+</div>
+
+<!-- Final -->
+<div class="slide-card">
+<i class="fa fa-trophy"></i>
+<h3>Final Presentation</h3>
+<p>Final product demonstration, evaluation outcomes and research conclusion.</p>
+
+<div class="btn-row">
+<a href="slides/final.pdf" target="_blank" class="btn-view">View Slides</a>
+</div>
+</div>
+
+</section>
+
+<footer class="footer">
+© 2026 Research Project Group | 25-26J-314
+</footer>
+
+</body>
+</html>

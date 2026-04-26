@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Domain</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.domain-page{
+max-width:1360px;
+margin:auto;
+padding:70px 24px 40px;
+}
+
+.domain-hero{
+position:relative;
+overflow:hidden;
+padding:70px 24px 90px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.domain-hero::before{
+content:"";
+position:absolute;
+left:50%;
+bottom:0;
+width:min(960px,88vw);
+height:180px;
+transform:translateX(-50%) perspective(420px) rotateX(62deg);
+background:
+linear-gradient(90deg,transparent 0 48%,rgba(255,255,255,.7) 48% 52%,transparent 52% 100%) center/86px 100%,
+linear-gradient(90deg,transparent 0 12%,rgba(56,189,248,.42) 12% 13%,transparent 13% 87%,rgba(56,189,248,.42) 87% 88%,transparent 88%),
+linear-gradient(180deg,rgba(15,23,42,.1),rgba(15,23,42,.85));
+clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);
+opacity:.42;
+animation:domainRoad 1.2s linear infinite;
+}
+
+.domain-hero::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:76px;
+width:14px;
+height:14px;
+border-radius:50%;
+background:#22c55e;
+box-shadow:0 0 24px #22c55e,210px 45px 0 -3px #38bdf8,-220px 52px 0 -4px #f59e0b;
+animation:checkpointBlink 1.8s ease-in-out infinite;
+}
+
+.domain-hero h1,
+.domain-hero p,
+.domain-badges{
+position:relative;
+z-index:1;
+}
+
+.domain-hero h1{
+font-size:58px;
+line-height:1.1;
+margin-bottom:18px;
+background:linear-gradient(90deg,#fff,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:fadeRise .8s ease both;
+}
+
+.domain-hero p{
+max-width:920px;
+margin:auto;
+font-size:18px;
+line-height:1.85;
+opacity:.88;
+animation:fadeRise .8s ease .12s both;
+}
+
+.domain-badges{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+animation:fadeRise .8s ease .22s both;
+}
+
+.domain-badges span{
+padding:11px 16px;
+border-radius:999px;
+background:rgba(20,30,48,.9);
+border:1px solid rgba(56,189,248,.22);
+box-shadow:0 10px 24px rgba(0,0,0,.22);
+font-weight:700;
+}
+
+.domain-section{
+margin-top:62px;
+}
+
+.domain-heading{
+text-align:center;
+margin-bottom:32px;
+}
+
+.domain-heading h2{
+font-size:42px;
+line-height:1.15;
+margin-bottom:10px;
+background:linear-gradient(90deg,#fff,#38bdf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.domain-heading p{
+max-width:760px;
+margin:auto;
+opacity:.78;
+line-height:1.8;
+}
+
+.foundation-grid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:24px;
+}
+
+.foundation-side{
+display:grid;
+gap:24px;
+}
+
+.domain-card{
+position:relative;
+overflow:hidden;
+padding:30px;
+border-radius:18px;
+background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 18px 40px rgba(0,0,0,.25);
+animation:fadeRise .7s ease both;
+transition:.35s ease;
+}
+
+.domain-card::before{
+content:"";
+position:absolute;
+inset:-70% -40%;
+background:linear-gradient(120deg,transparent 40%,rgba(56,189,248,.18),transparent 62%);
+transform:translateX(-45%) rotate(10deg);
+animation:cardSweep 5.2s ease-in-out infinite;
+}
+
+.domain-card:hover{
+transform:translateY(-8px);
+border-color:rgba(56,189,248,.36);
+box-shadow:0 24px 46px rgba(0,0,0,.34),0 0 26px rgba(56,189,248,.12);
+}
+
+.domain-card i,
+.domain-card h3,
+.domain-card p{
+position:relative;
+z-index:1;
+}
+
+.domain-card i{
+font-size:34px;
+color:#38bdf8;
+margin-bottom:16px;
+}
+
+.domain-card h3{
+font-size:26px;
+margin-bottom:14px;
+}
+
+.domain-card p{
+opacity:.86;
+line-height:1.75;
+}
+
+.domain-card.large{
+min-height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.component-grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:24px;
+}
+
+.component-card{
+min-height:310px;
+}
+
+.workflow{
+position:relative;
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:28px;
+padding-top:22px;
+}
+
+.workflow::before{
+content:"";
+position:absolute;
+left:9%;
+right:9%;
+top:58px;
+height:3px;
+border-radius:99px;
+background:linear-gradient(90deg,transparent,#38bdf8,#22c55e,#38bdf8,transparent);
+box-shadow:0 0 24px rgba(56,189,248,.35);
+animation:flowLine 2.5s ease-in-out infinite;
+}
+
+.step-card{
+position:relative;
+padding:34px 24px 26px;
+text-align:center;
+}
+
+.step-number{
+position:relative;
+z-index:2;
+display:inline-grid;
+place-items:center;
+width:58px;
+height:58px;
+margin-bottom:18px;
+border-radius:50%;
+background:linear-gradient(135deg,#06b6d4,#7c3aed);
+box-shadow:0 0 28px rgba(56,189,248,.38);
+font-size:22px;
+font-weight:800;
+animation:nodePulse 2.4s ease-in-out infinite;
+}
+
+.step-card:nth-child(2) .step-number{animation-delay:.2s;}
+.step-card:nth-child(3) .step-number{animation-delay:.4s;}
+.step-card:nth-child(4) .step-number{animation-delay:.6s;}
+.step-card:nth-child(5) .step-number{animation-delay:.8s;}
+.step-card:nth-child(6) .step-number{animation-delay:1s;}
+
+@keyframes domainRoad{
+from{background-position:center 0,center,center;}
+to{background-position:center 86px,center,center;}
+}
+
+@keyframes checkpointBlink{
+0%,100%{transform:translateX(-50%) scale(.88);opacity:.65;}
+50%{transform:translateX(-50%) scale(1.18);opacity:1;}
+}
+
+@keyframes fadeRise{
+from{opacity:0;transform:translateY(28px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes cardSweep{
+0%,100%{transform:translateX(-48%) rotate(10deg);opacity:.12;}
+50%{transform:translateX(48%) rotate(10deg);opacity:.65;}
+}
+
+@keyframes flowLine{
+0%,100%{opacity:.35;transform:scaleX(.72);}
+50%{opacity:1;transform:scaleX(1);}
+}
+
+@keyframes nodePulse{
+0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,189,248,.28);}
+50%{transform:scale(1.08);box-shadow:0 0 36px rgba(56,189,248,.58);}
+}
+
+@media(max-width:1100px){
+.foundation-grid,
+.component-grid,
+.workflow{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.workflow::before{
+display:none;
+}
+}
+
+@media(max-width:700px){
+.domain-page{
+padding:44px 16px 30px;
+}
+
+.domain-hero{
+padding:50px 16px 70px;
+}
+
+.domain-hero h1{
+font-size:40px;
+}
+
+.foundation-grid,
+.component-grid,
+.workflow{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="domain.html" class="active">Domain</a>
+    <a href="milestones.html">Milestones</a>
+    <a href="documents.html">Documents</a>
+    <a href="presentations.html">Slides</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="domain-hero">
+<h1>Research Domain</h1>
+<p>
+This research focuses on a smart highway safety platform that combines RFID vehicle identification, live speed calculation, machine learning risk prediction, driver-state monitoring, accident response, and real-time dashboard alerts.
+</p>
+<div class="domain-badges">
+<span><i class="fa fa-id-card"></i> RFID Telemetrics</span>
+<span><i class="fa fa-gauge-high"></i> Speed Monitoring</span>
+<span><i class="fa fa-brain"></i> ML Prediction</span>
+<span><i class="fa fa-car-burst"></i> Accident Response</span>
+</div>
+</section>
+
+<main class="domain-page">
+
+<section class="domain-section">
+<div class="domain-heading">
+<h2>Research Foundation</h2>
+<p>The study addresses the academic problem, existing gap, and project objectives behind the smart highway monitoring system.</p>
+</div>
+
+<div class="foundation-grid">
+<article class="domain-card large">
+<i class="fa fa-book-open"></i>
+<h3>Literature Survey</h3>
+<p>
+Traditional traffic monitoring systems mostly detect violations after they happen using cameras, manual checking, or isolated speed sensors. Modern intelligent transport research shows that IoT, RFID, dashboards, and machine learning can support faster identification, prediction, and emergency response.
+</p>
+</article>
+
+<div class="foundation-side">
+<article class="domain-card">
+<i class="fa fa-magnifying-glass"></i>
+<h3>Research Gap</h3>
+<p>
+Many existing systems identify a vehicle, but they do not reliably connect the vehicle with the current driver, driver condition, speed behavior, and historical risk.
+</p>
+</article>
+
+<article class="domain-card">
+<i class="fa fa-triangle-exclamation"></i>
+<h3>Research Problem</h3>
+<p>
+Highway accidents and speed violations increase when authorities receive late information about overspeeding, risky drivers, abnormal driver conditions, or accident events.
+</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="domain-section">
+<div class="domain-heading">
+<h2>Core Research Components</h2>
+<p>Each component contributes a specific intelligence layer to improve road safety and enforcement response.</p>
+</div>
+
+<div class="component-grid">
+<article class="domain-card component-card">
+<i class="fa fa-bullseye"></i>
+<h3>Research Objectives</h3>
+<p>
+Identify vehicles and drivers using RFID, calculate speed between checkpoints, classify driver risk, detect accidents quickly, and provide real-time alerts through a professional dashboard.
+</p>
+</article>
+
+<article class="domain-card component-card">
+<i class="fa fa-id-card"></i>
+<h3>RFID Speed Monitoring</h3>
+<p>
+Entry checkpoint Z scans the vehicle and selected driver. Checkpoints A and B match the same driver and calculate speed using distance and time. Exit checkpoint C records final trip status.
+</p>
+</article>
+
+<article class="domain-card component-card">
+<i class="fa fa-brain"></i>
+<h3>Prediction Component</h3>
+<p>
+Machine learning analyzes speed, speed limit, time, location, vehicle type, traffic density, and past violations to classify low, medium, or high driver risk.
+</p>
+</article>
+
+<article class="domain-card component-card">
+<i class="fa fa-user-shield"></i>
+<h3>Driver And Accident Safety</h3>
+<p>
+RFID telemetrics, AI vision, and driver-state monitoring detect sudden speed drops, collisions, drowsiness, distraction, and risky behavior before or during incidents.
+</p>
+</article>
+</div>
+</section>
+
+<section class="domain-section">
+<div class="domain-heading">
+<h2>System Methodology</h2>
+<p>The complete workflow connects highway RFID checkpoints, ESP32 devices, a Node.js backend, MongoDB Atlas storage, machine learning analysis, and a live dashboard for authorities.</p>
+</div>
+
+<div class="workflow">
+<article class="domain-card step-card">
+<span class="step-number">1</span>
+<h3>Entry Zone</h3>
+<p>The Z-location ESP32 scans the vehicle RFID, scans human RFID tags, selects the correct driver, and displays the vehicle entry event.</p>
+</article>
+
+<article class="domain-card step-card">
+<span class="step-number">2</span>
+<h3>Speed Zone</h3>
+<p>The A and B RFID scanners identify the same vehicle and driver, then calculate speed from checkpoint distance and timestamp difference.</p>
+</article>
+
+<article class="domain-card step-card">
+<span class="step-number">3</span>
+<h3>Exit Zone</h3>
+<p>At checkpoint C, the system displays exit driver, exit time, and status. The trip record is finalized for storage and review.</p>
+</article>
+
+<article class="domain-card step-card">
+<span class="step-number">4</span>
+<h3>Dashboard Alerts</h3>
+<p>The dashboard shows driver selection, vehicle entry, live speed, exit details, risk levels, accident alerts, and statistics.</p>
+</article>
+
+<article class="domain-card step-card">
+<span class="step-number">5</span>
+<h3>Hardware</h3>
+<p>The prototype uses ESP32 boards, MFRC522 RFID readers, AMS1117 3.3V power regulation, RFID vehicle tags, and driver tags.</p>
+</article>
+
+<article class="domain-card step-card">
+<span class="step-number">6</span>
+<h3>Technologies Used</h3>
+<p>HTML, CSS, JavaScript, Node.js, REST API, MongoDB Atlas, ESP32, MFRC522 RFID, machine learning, dashboard visualization, and AI vision concepts.</p>
+</article>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<p>&copy; 2026 Smart Highway Monitoring Research Project</p>
+</footer>
+
+</body>
+</html>

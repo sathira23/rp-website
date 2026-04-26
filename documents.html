@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documents | Research Project</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* HERO */
+.doc-hero{
+padding:90px 20px 45px;
+text-align:center;
+animation:fadeUp 1s ease;
+}
+
+.doc-hero h1{
+font-size:62px;
+font-weight:700;
+margin-bottom:14px;
+background:linear-gradient(90deg,#ffffff,#38bdf8,#a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.doc-hero p{
+max-width:950px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+opacity:0.88;
+}
+
+/* GRID */
+.doc-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:32px;
+padding:30px;
+max-width:1500px;
+margin:auto;
+align-items:stretch;
+}
+
+/* CARD */
+.doc-card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+padding:38px 32px;
+border-radius:26px;
+backdrop-filter:blur(12px);
+box-shadow:0 18px 35px rgba(0,0,0,0.28);
+transition:0.4s;
+text-align:center;
+animation:fadeUp 0.9s ease;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+min-height:430px;
+}
+
+.doc-card:hover{
+transform:translateY(-10px);
+box-shadow:0 28px 45px rgba(0,0,0,0.35);
+}
+
+.doc-card i{
+font-size:52px;
+color:#38bdf8;
+margin-bottom:22px;
+}
+
+.doc-card h3{
+font-size:36px;
+margin-bottom:14px;
+line-height:1.25;
+}
+
+.doc-card p{
+font-size:18px;
+opacity:0.84;
+line-height:1.8;
+margin-bottom:28px;
+flex-grow:1;
+}
+
+/* BUTTON */
+.btn-row{
+margin-top:auto;
+padding-top:10px;
+}
+
+.btn-view{
+display:inline-block;
+padding:15px 28px;
+border-radius:40px;
+font-size:16px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+background:linear-gradient(135deg,#06b6d4,#7c3aed);
+color:#fff;
+}
+
+.btn-view:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:40px;
+opacity:0.75;
+font-size:15px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.doc-hero h1{
+font-size:42px;
+}
+
+.doc-hero p{
+font-size:16px;
+}
+
+.doc-card{
+min-height:auto;
+padding:28px 24px;
+}
+
+.doc-card h3{
+font-size:28px;
+}
+
+.doc-card p{
+font-size:16px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="domain.html">Domain</a>
+<a href="milestones.html">Milestones</a>
+<a href="documents.html" class="active">Documents</a>
+<a href="presentations.html">Slides</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="doc-hero">
+<h1>Documents</h1>
+<p>
+Browse all official project documents, reports, submissions and checklists.<br>
+Open online instantly.
+</p>
+</section>
+
+<!-- GRID -->
+<section class="doc-grid">
+
+<!-- Project Charter -->
+<div class="doc-card">
+<i class="fa fa-file-lines"></i>
+<h3>Project Charter</h3>
+<p>Project overview, scope, planning and objectives.</p>
+
+<div class="btn-row">
+<a href="documents/project-charter.pdf" target="_blank" class="btn-view">View Document</a>
+</div>
+</div>
+
+<!-- Proposal -->
+<div class="doc-card">
+<i class="fa fa-file-circle-check"></i>
+<h3>Proposal Document</h3>
+<p>Research proposal with methodology and expected outcomes.</p>
+
+<div class="btn-row">
+<a href="documents/projectproposal.pdf" target="_blank" class="btn-view">View Document</a>
+</div>
+</div>
+
+<!-- Checklist PDF -->
+<div class="doc-card">
+<i class="fa fa-list-check"></i>
+<h3>Checklist Documents</h3>
+<p>Submission checklists and required evaluation forms.</p>
+
+<div class="btn-row">
+<a href="documents/checklist.pdf" target="_blank" class="btn-view">View Document</a>
+</div>
+</div>
+
+<!-- Final Report -->
+<div class="doc-card">
+<i class="fa fa-book"></i>
+<h3>Final Report</h3>
+<p>Main report with chapters, research findings and results.</p>
+
+<div class="btn-row">
+<a href="documents/final-report.pdf" target="_blank" class="btn-view">View Document</a>
+</div>
+</div>
+
+</section>
+
+<footer class="footer">
+© 2026 Research Project Group | 25-26J-314
+</footer>
+
+</body>
+</html>

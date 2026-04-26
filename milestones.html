@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milestones | Research Project</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* PAGE FIX */
+html,body{
+height:100%;
+margin:0;
+}
+
+body{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* MAIN CONTENT */
+.main-content{
+flex:1;
+}
+
+/* HERO */
+.mile-hero{
+padding:90px 20px 40px;
+text-align:center;
+animation:fadeDown 1s ease;
+}
+
+.mile-hero h1{
+font-size:58px;
+font-weight:700;
+margin-bottom:15px;
+background:linear-gradient(90deg,#ffffff,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 25px rgba(56,189,248,.25);
+}
+
+.mile-hero p{
+max-width:950px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+opacity:0.88;
+}
+
+/* SELECT */
+.select-wrap{
+max-width:520px;
+margin:30px auto 10px;
+}
+
+select{
+width:100%;
+padding:16px 20px;
+border:none;
+outline:none;
+border-radius:16px;
+font-size:16px;
+color:#fff;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+transition:0.3s;
+cursor:pointer;
+}
+
+select:hover{
+transform:translateY(-2px);
+}
+
+option{
+color:#111;
+}
+
+/* CONTENT AREA */
+.content-box{
+display:none;
+max-width:1150px;
+margin:35px auto 60px;
+padding:0 20px;
+}
+
+.show{
+display:block;
+animation:fadeUp .8s ease;
+}
+
+/* CARD */
+.mile-card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:28px;
+padding:35px;
+box-shadow:0 25px 45px rgba(0,0,0,0.30);
+backdrop-filter:blur(14px);
+transition:0.4s;
+}
+
+.mile-card:hover{
+transform:translateY(-8px);
+box-shadow:0 35px 55px rgba(0,0,0,0.35);
+}
+
+.status{
+display:inline-block;
+padding:9px 18px;
+border-radius:40px;
+font-size:14px;
+font-weight:700;
+margin-bottom:20px;
+background:linear-gradient(135deg,#06b6d4,#7c3aed);
+}
+
+.mile-card h2{
+font-size:48px;
+margin:10px 0 25px;
+color:#38bdf8;
+}
+
+/* GRID */
+.info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-bottom:25px;
+}
+
+.info div{
+background:rgba(255,255,255,0.05);
+padding:18px;
+border-radius:16px;
+transition:0.3s;
+}
+
+.info div:hover{
+transform:scale(1.03);
+background:rgba(255,255,255,0.08);
+}
+
+.info strong{
+display:block;
+font-size:14px;
+margin-bottom:6px;
+opacity:0.7;
+}
+
+/* COMMENTS */
+.comment{
+margin-top:18px;
+padding:22px;
+border-left:4px solid #8b5cf6;
+border-radius:16px;
+background:rgba(139,92,246,0.14);
+line-height:1.9;
+font-size:17px;
+}
+
+/* FOOTER FIXED BOTTOM */
+.footer{
+margin-top:auto;
+text-align:center;
+padding:24px;
+font-size:14px;
+opacity:0.75;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.mile-hero h1{
+font-size:42px;
+}
+
+.mile-card h2{
+font-size:34px;
+}
+
+.mile-hero p{
+font-size:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="domain.html">Domain</a>
+<a href="milestones.html" class="active">Milestones</a>
+<a href="documents.html">Documents</a>
+<a href="presentations.html">Slides</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="main-content">
+
+<section class="mile-hero">
+<h1>Project Milestones</h1>
+<p>
+Track every major assessment in the research journey, including dates,
+mark allocations, presentation stages, completed evaluations and panel feedback.
+Choose an assessment below to explore full details.
+</p>
+
+<div class="select-wrap">
+<select onchange="showMilestone(this.value)">
+<option value="">Choose Assessment</option>
+<option value="proposal">Project Proposal</option>
+<option value="pp1">Progress Presentation 1</option>
+<option value="pp2">Progress Presentation 2</option>
+<option value="viva">Final Viva</option>
+</select>
+</div>
+</section>
+
+<!-- PROPOSAL -->
+<div id="proposal" class="content-box">
+<div class="mile-card">
+<span class="status">Completed</span>
+<h2>Project Proposal</h2>
+
+<div class="info">
+<div><strong>Date</strong>09 September 2025</div>
+<div><strong>Marks</strong>5%</div>
+<div><strong>Status</strong>Completed</div>
+<div><strong>Focus</strong>Research Idea & Novelty</div>
+</div>
+
+<div class="comment">
+The initial proposal introduced the concept of an IoT and ML based smart highway
+monitoring system using RFID-enabled license validation. Panel feedback mainly
+requested clearer novelty explanation, stronger individual contribution details,
+and more confident justification of the research gap.
+</div>
+</div>
+</div>
+
+<!-- PP1 -->
+<div id="pp1" class="content-box">
+<div class="mile-card">
+<span class="status">Completed</span>
+<h2>Progress Presentation 1</h2>
+
+<div class="info">
+<div><strong>Date</strong>06 January 2026</div>
+<div><strong>Marks</strong>15%</div>
+<div><strong>Status</strong>Completed</div>
+<div><strong>Performance</strong>Average</div>
+</div>
+
+<div class="comment">
+The team demonstrated early prototypes and progress of each component.
+Panel comments highlighted positive progress, especially IoT device detection
+of person, vehicle and speed. Improvements were requested for prediction accuracy,
+risk detection intelligence and expanded drowsiness monitoring factors.
+</div>
+</div>
+</div>
+
+<!-- PP2 -->
+<div id="pp2" class="content-box show">
+<div class="mile-card">
+<span class="status">Completed</span>
+<h2>Progress Presentation 2</h2>
+
+<div class="info">
+<div><strong>Date</strong>10 March 2026</div>
+<div><strong>Marks</strong>18%</div>
+<div><strong>Status</strong>Completed</div>
+<div><strong>Focus</strong>System Implementation</div>
+</div>
+
+<div class="comment">
+A more advanced version of the project was presented with system integration,
+dashboards and monitoring features. Panel advised the team to consider more
+behavioral patterns for violence detection, issue warnings before critical events,
+improve emotional-state recognition, and polish the live demonstration flow.
+</div>
+</div>
+</div>
+
+<!-- VIVA -->
+<div id="viva" class="content-box">
+<div class="mile-card">
+<span class="status">Upcoming</span>
+<h2>Final Viva</h2>
+
+<div class="info">
+<div><strong>Date</strong>05 May 2026</div>
+<div><strong>Marks</strong>10%</div>
+<div><strong>Status</strong>Upcoming</div>
+<div><strong>Focus</strong>Final Evaluation</div>
+</div>
+
+<div class="comment">
+The final viva will evaluate complete system quality, technical knowledge,
+research contribution, communication skills and confidence. Prepare for live
+questions on machine learning models, RFID workflow, dashboards, implementation
+choices and commercialization potential.
+</div>
+</div>
+</div>
+
+</div>
+
+<footer class="footer">
+© 2026 Research Project Group | 25-26J-314
+</footer>
+
+<script>
+function showMilestone(id){
+let boxes=document.querySelectorAll('.content-box');
+boxes.forEach(box=>box.classList.remove('show'));
+
+if(id){
+document.getElementById(id).classList.add('show');
+}
+}
+</script>
+
+</body>
+</html>
