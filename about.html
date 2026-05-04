@@ -45,6 +45,15 @@ max-width:1450px;
 margin:auto;
 }
 
+.supervisor-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(320px,1fr));
+gap:30px;
+padding:10px 25px 36px;
+max-width:1180px;
+margin:auto;
+}
+
 /* CARD */
 .team-card{
 position:relative;
@@ -102,6 +111,37 @@ border-color:#a855f7;
 box-shadow:0 0 35px rgba(168,85,247,0.45);
 }
 
+.supervisor-card{
+background:
+linear-gradient(145deg,rgba(14,165,233,.16),rgba(34,197,94,.08)),
+rgba(255,255,255,0.07);
+border-color:rgba(56,189,248,.22);
+}
+
+.supervisor-card::after{
+content:"";
+position:absolute;
+left:-45%;
+top:0;
+width:42%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+transform:skewX(-18deg);
+animation:advisorShine 4.8s ease-in-out infinite;
+}
+
+.supervisor-card .team-img{
+width:150px;
+height:150px;
+border-color:#22c55e;
+box-shadow:0 0 34px rgba(34,197,94,.35);
+}
+
+.supervisor-card:hover .team-img{
+border-color:#38bdf8;
+box-shadow:0 0 38px rgba(56,189,248,.48);
+}
+
 /* BADGE */
 .badge{
 display:inline-block;
@@ -115,6 +155,14 @@ background:linear-gradient(135deg,#f59e0b,#ef4444);
 
 .member{
 background:linear-gradient(135deg,#06b6d4,#7c3aed);
+}
+
+.advisor{
+background:linear-gradient(135deg,#22c55e,#06b6d4);
+}
+
+.coadvisor{
+background:linear-gradient(135deg,#38bdf8,#a855f7);
 }
 
 /* NAME */
@@ -163,8 +211,13 @@ margin:10px 0;
 padding:11px 14px;
 border-radius:14px;
 background:rgba(255,255,255,0.05);
-font-size:15px;
+font-size:14px;
 transition:0.3s;
+display:flex;
+align-items:center;
+gap:8px;
+line-height:1.35;
+white-space:nowrap;
 }
 
 .info:hover{
@@ -174,7 +227,18 @@ background:rgba(255,255,255,0.09);
 
 .info i{
 width:24px;
+min-width:24px;
 color:#38bdf8;
+text-align:center;
+}
+
+.section-label{
+text-align:center;
+font-size:38px;
+margin:18px 0 12px;
+background:linear-gradient(90deg,#fff,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 /* FOOTER */
@@ -190,6 +254,12 @@ font-size:14px;
 from{
 opacity:0;
 transform:translateY(35px);
+}
+
+@keyframes advisorShine{
+0%,35%{left:-55%;opacity:0;}
+55%{opacity:1;}
+80%,100%{left:110%;opacity:0;}
 }
 to{
 opacity:1;
@@ -211,6 +281,10 @@ font-size:15px;
 .team-card h3{
 font-size:26px;
 min-height:auto;
+}
+
+.supervisor-grid{
+grid-template-columns:1fr;
 }
 
 .role,
@@ -245,6 +319,38 @@ IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation
 </p>
 </section>
 
+<h2 class="section-label">Project Supervisors</h2>
+
+<section class="supervisor-grid">
+
+<div class="team-card supervisor-card">
+<img src="images/su.jpeg" class="team-img">
+<div class="badge advisor">Supervisor</div>
+<h3>Dr. Kapila Dissanayaka</h3>
+<div class="degree">Assistant Professor - Information Technology - (FOC)</div>
+<p class="role">Project supervision, academic guidance and research direction for the smart highway monitoring system.</p>
+
+<div class="info"><i class="fa fa-envelope"></i> kapila.d@sliit.lk</div>
+<div class="info"><i class="fa fa-phone"></i> 117544111</div>
+<div class="info"><i class="fa fa-building"></i> SLIIT Malabe</div>
+</div>
+
+<div class="team-card supervisor-card">
+<img src="images/co.jpeg" class="team-img">
+<div class="badge coadvisor">Co-Supervisor</div>
+<h3>Ms. Suranjini Silva</h3>
+<div class="degree">Lecturer - Computer Systems Engineering - (FOC)</div>
+<p class="role">Co-supervision, technical support and system guidance for RFID, dashboard and implementation activities.</p>
+
+<div class="info"><i class="fa fa-envelope"></i> suranjini.s@sliit.lk</div>
+<div class="info"><i class="fa fa-phone"></i> 117543941</div>
+<div class="info"><i class="fa fa-building"></i> SLIIT Malabe</div>
+</div>
+
+</section>
+
+<h2 class="section-label">Research Team Members</h2>
+
 <!-- TEAM -->
 <section class="team-grid">
 
@@ -257,6 +363,7 @@ IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation
 <p class="role">Intelligent Accident Response and Statistical Resource Prioritization Component</p>
 
 <div class="info"><i class="fa fa-id-card"></i> IT22917416</div>
+<div class="info"><i class="fa fa-envelope-open"></i> ravindulakshan01@gmail.com</div>
 <div class="info"><i class="fa fa-envelope"></i> IT22917416@my.sliit.lk</div>
 <div class="info"><i class="fa fa-phone"></i> 0716596231</div>
 </div>
@@ -270,6 +377,7 @@ IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation
 <p class="role">IoT System for RFID-Based Vehicle Speed Monitoring</p>
 
 <div class="info"><i class="fa fa-id-card"></i> IT22156006</div>
+<div class="info"><i class="fa fa-envelope-open"></i> sathiraporogama@gmail.com</div>
 <div class="info"><i class="fa fa-envelope"></i> IT22156006@my.sliit.lk</div>
 <div class="info"><i class="fa fa-phone"></i> 0701478902</div>
 </div>
@@ -283,6 +391,7 @@ IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation
 <p class="role">Dashboard & Driver Alert System</p>
 
 <div class="info"><i class="fa fa-id-card"></i> IT22308252</div>
+<div class="info"><i class="fa fa-envelope-open"></i> imashiperera02@gmail.com</div>
 <div class="info"><i class="fa fa-envelope"></i> IT22308252@my.sliit.lk</div>
 <div class="info"><i class="fa fa-phone"></i> 0766702382</div>
 </div>
@@ -296,6 +405,7 @@ IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation
 <p class="role">Driver State Accident Prevention System</p>
 
 <div class="info"><i class="fa fa-id-card"></i> IT22350978</div>
+<div class="info"><i class="fa fa-envelope-open"></i> keshani20konara@gmail.com</div>
 <div class="info"><i class="fa fa-envelope"></i> IT22350978@my.sliit.lk</div>
 <div class="info"><i class="fa fa-phone"></i> 0716097055</div>
 </div>
