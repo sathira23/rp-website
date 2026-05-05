@@ -137,6 +137,12 @@ transition:.3s;
 transform:translateY(-3px) scale(1.03);
 }
 
+.btn-send:disabled{
+opacity:.65;
+cursor:not-allowed;
+transform:none;
+}
+
 /* FOOTER */
 .footer{
 text-align:center;
@@ -233,12 +239,12 @@ Feel free to contact the team leader or send us your inquiry.
 
 <form class="contact-form">
 
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
 
-<input type="text" value="Inquiry About IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation Project">
+<input type="text" name="title" value="Inquiry About IoT & ML-based Vehicle Speed Monitoring with RFID-Enabled License Validation Project" required>
 
-<textarea>
+<textarea name="message" required>
 Dear Team,
 
 I visited your research project website and would like to know more about your system. Please contact me when convenient.
@@ -254,8 +260,55 @@ Thank you.
 </section>
 
 <footer class="footer">
-© 2026 Research Project Group | 25-26J-314
+&copy; 2026 Research Project Group | 25-26J-314
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("ELkL3OOmiXhsyj3y3");
+
+const contactForm = document.querySelector(".contact-form");
+const sendButton = document.querySelector(".btn-send");
+
+contactForm.addEventListener("submit", function(e){
+e.preventDefault();
+
+const params = {
+name: this.name.value.trim(),
+email: this.email.value.trim(),
+title: this.title.value.trim(),
+message: this.message.value.trim(),
+from_name: this.name.value.trim(),
+from_email: this.email.value.trim(),
+reply_to: this.email.value.trim(),
+subject: this.title.value.trim(),
+to_email: "sliit314.2026@gmail.com"
+};
+
+if(!params.name || !params.email || !params.title || !params.message){
+alert("Please fill all fields before sending.");
+return;
+}
+
+sendButton.disabled = true;
+sendButton.textContent = "Sending...";
+
+emailjs.send("service_h97mev9", "template_29m4sij", params)
+.then(function(response){
+console.log("EmailJS success:", response.status, response.text);
+alert("Message sent successfully! Please check inbox, spam, and EmailJS email history.");
+contactForm.reset();
+})
+.catch(function(error){
+console.error("EmailJS failed:", error);
+alert("Failed to send message: " + JSON.stringify(error));
+})
+.finally(function(){
+sendButton.disabled = false;
+sendButton.textContent = "Send Message";
+});
+});
+</script>
 
 </body>
 </html>
